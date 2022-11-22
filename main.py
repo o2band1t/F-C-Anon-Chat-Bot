@@ -243,7 +243,6 @@ async def on_message(message):
 			description="Please limit them to 3 at a time. Only the first 3 attachments were sent."
 		)
 		message.channel.send(embed=embed)
-		return
 	files_to_send = [await a.to_file() for a in message.attachments[:3]]
 	await convo_member_partner[message.author.id].send(content=message.content, files=files_to_send)
 
